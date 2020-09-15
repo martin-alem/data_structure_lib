@@ -23,6 +23,15 @@ typedef struct slinkedlist {
     char *type;
 }SLinkedList;
 
+
+/*
+ * DEF: determines a correct datatype
+ * PARAM1: const char *type *list - data type passed in by user
+ * RETURN: returns 1 if type is correct and 0 otherwise
+*/
+int checkType(const char *type);
+
+
 /*
  * DEF: Initialize SLinkedList
  * PARAM1: SLinkedList *list - single linkedlist structure to be initialize
