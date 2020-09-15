@@ -6,11 +6,6 @@
 #include <string.h>
 #include <stdio.h>
 
-/*
- * DEF: determines a correct datatype
- * PARAM1: const char *type *list - data type passed in by user
- * RETURN: returns 1 if type is correct and 0 otherwise
-*/
 int checkType(const char *type){
 
     char *types[] = {"int", "double", "float", "char", "string"};
@@ -29,12 +24,7 @@ int checkType(const char *type){
     return flag;
 }
 
-/*
- * DEF: Initialize SLinkedList
- * PARAM1: SLinkedList *list - single linkedlist structure to be initialize
- * PARAM2: char *type - object datatype stored in list
- * RETURN: returns void
-*/
+
 void init(SLinkedList *list, char *type){
     list->head = NULL;
     list->tail = NULL;
@@ -46,6 +36,15 @@ void init(SLinkedList *list, char *type){
     else{
         fprintf(stderr, "%s", "Error: Invalid Type\n");
         exit(0);
+    }
+}
+
+
+void freeNode(void **node){
+
+    if(node != NULL && *node != NULL){
+        free(*node);
+        *node = NULL;
     }
 }
 
