@@ -13,5 +13,6 @@ void init(SLinkedList *list, char *type){
     list->head = NULL;
     list->tail = NULL;
     list->size = 0;
+    list->type = type;
 }
 

@@ -20,6 +20,7 @@ typedef struct slinkedlist {
     Node *head;
     Node *tail;
     unsigned int size;
+    char *type;
 }SLinkedList;
 
 /*
