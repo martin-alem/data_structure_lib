@@ -27,7 +27,6 @@ typedef struct slinkedlist {
 /*
  * DEF: Initialize SLinkedList
  * PARAM1: SLinkedList *list - single linkedlist structure to be initialize
- * PARAM2: char *type - object datatype stored in list
  * RETURN: returns void
 */
 void init(SLinkedList *list);
