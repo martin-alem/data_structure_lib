@@ -25,20 +25,12 @@ typedef struct slinkedlist {
 
 
 /*
- * DEF: determines a correct datatype
- * PARAM1: const char *type *list - data type passed in by user
- * RETURN: returns 1 if type is correct and 0 otherwise
-*/
-int checkType(const char *type);
-
-
-/*
  * DEF: Initialize SLinkedList
  * PARAM1: SLinkedList *list - single linkedlist structure to be initialize
  * PARAM2: char *type - object datatype stored in list
  * RETURN: returns void
 */
-void init(SLinkedList *list, char *type);
+void init(SLinkedList *list);
 
 /*
  * DEF: Frees a node allocated with malloc
@@ -81,29 +73,15 @@ void removeFront(SLinkedList *list);
  * PARAM1: SLinkedList *list - single linkedlist structure
  * RETURN: returns number of elements
 */
-unsigned int getListSize(SLinkedList *list);
+unsigned int getSize(SLinkedList *list);
 
 /*
- * DEF: prints all data in the list
+ * DEF: returns a pointer to the data at a particular index
  * PARAM1: SLinkedList *list - single linkedlist structure
+ * PARAM2: int index - index of data in list
  * RETURN: returns void
 */
-void print(SLinkedList *list);
-
-/*
- * DEF: gets the data at the head
- * PARAM1: SLinkedList *list - single linkedlist structure
- * RETURN: returns pointer to data otherwise void
-*/
-void *getHead(SLinkedList *list);
-
-/*
- * DEF: gets the data at the tail
- * PARAM1: SLinkedList *list - single linkedlist structure
- * RETURN: returns pointer to data otherwise void
-*/
-void *getTail(SLinkedList *list);
-
+void *get(SLinkedList *list, int index);
 
 
 #endif //DATASTRUCTURE_LIBRARY_H

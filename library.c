@@ -6,37 +6,10 @@
 #include <string.h>
 #include <stdio.h>
 
-int checkType(const char *type){
-
-    char *types[] = {"int", "double", "float", "char", "string"};
-    unsigned int len = sizeof(types)/sizeof(char *);
-    short flag = 0;
-
-    for(register int i = 0; i < len; i++){
-        if(strcmp(type, types[i]) != 0){
-            continue;
-        }
-        else{
-            flag = 1;
-        }
-    }
-
-    return flag;
-}
-
-
-void init(SLinkedList *list, char *type){
+void init(SLinkedList *list){
     list->head = NULL;
     list->tail = NULL;
     list->size = 0;
-
-    if(checkType(type)){
-        list->type = type;
-    }
-    else{
-        fprintf(stderr, "%s", "Error: Invalid Type\n");
-        exit(0);
-    }
 }
 
 
@@ -46,5 +19,19 @@ void freeNode(void **node){
         free(*node);
         *node = NULL;
     }
+}
+
+void clear(SLinkedList *list){
+
+    Node *node = list->head;
+    Node *nextNode;
+
+    while(node != NULL){
+        nextNode = node->next;
+        freeNode((void **)&node);
+        node = nextNode;
+    }
+    list->head = NULL;
+    list->tail = NULL;
 }
 
