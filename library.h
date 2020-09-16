@@ -84,4 +84,13 @@ unsigned int getSize(SLinkedList *list);
 void *get(SLinkedList *list, int index);
 
 
+/*
+ * DEF: removes the element next to the one whose index is provided
+ * PARAM1: SLinkedList *list - single linkedlist structure
+ * PARAM2: int index - index of data in list
+ * RETURN: returns void
+*/
+void removeNext(SLinkedList *list, int index);
+
+
 #endif //DATASTRUCTURE_LIBRARY_H
