@@ -84,6 +84,28 @@ void removeFront(SLinkedList *list){
     }
 }
 
+void removeNext(SLinkedList *list, int index){
+
+    if(list->head != NULL){
+
+        if(index >= getSize(list) - 1 || index < 0){
+            return;
+        }
+        unsigned int i = 0;
+        Node *node, *tempNode = list->head,*nextNode;
+
+        do{
+            nextNode = tempNode->next;
+            node = tempNode;
+            tempNode = tempNode->next;
+            i += 1;
+        }while(i <= index);
+
+        node->next = nextNode->next;
+        freeNode((void **)&nextNode);
+    }
+}
+
 unsigned int getSize(SLinkedList *list){
 
     unsigned int len = 0;
