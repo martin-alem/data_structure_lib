@@ -35,3 +35,22 @@ void clear(SLinkedList *list){
     list->tail = NULL;
 }
 
+Node *add(SLinkedList *list, const void *data){
+
+    Node *node = (Node *)malloc(sizeof(Node));
+    if(node == NULL){
+        return NULL;
+    }
+    node->data = data;
+    node->next = NULL;
+
+    if(list->head == NULL){
+        list->head = node;
+    }
+    else{
+        list->tail->next = node;
+    }
+    list->tail = node;
+    return node;
+}
+
