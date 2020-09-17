@@ -51,6 +51,24 @@ Node *add(SLinkedList *list, const void *data){
         list->tail->next = node;
     }
     list->tail = node;
+    // update size of list
+    getSize(list);
     return node;
+}
+
+unsigned int getSize(SLinkedList *list){
+
+    unsigned int len = 0;
+
+    if(list->tail != NULL){
+        Node *node = list->head;
+        while(node != NULL){
+            len += 1;
+            node = node->next;
+        }
+        list->size = len;
+        return len;
+    }
+    return len;
 }
 
