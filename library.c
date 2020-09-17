@@ -4,12 +4,10 @@
 #include "library.h"
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 void init(SLinkedList *list){
     list->head = NULL;
     list->tail = NULL;
-    list->size = 0;
 }
 
 
@@ -51,9 +49,29 @@ Node *add(SLinkedList *list, const void *data){
         list->tail->next = node;
     }
     list->tail = node;
-    // update size of list
-    getSize(list);
     return node;
+}
+
+void *get(SLinkedList *list, int index){
+
+    if(list->head != NULL){
+
+        if(index >= getSize(list)){
+            return NULL;
+        }
+        Node *node = list->head;
+        void *n;
+        unsigned int i = 0;
+
+        do {
+            n = (void *)node->data;
+            node = node->next;
+            i += 1;
+        }while (i <= index);
+
+        return n;
+    }
+    return NULL;
 }
 
 unsigned int getSize(SLinkedList *list){
@@ -66,7 +84,6 @@ unsigned int getSize(SLinkedList *list){
             len += 1;
             node = node->next;
         }
-        list->size = len;
         return len;
     }
     return len;

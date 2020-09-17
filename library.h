@@ -19,8 +19,6 @@ typedef struct node{
 typedef struct slinkedlist {
     Node *head;
     Node *tail;
-    unsigned int size;
-    char *type;
 }SLinkedList;
 
 
@@ -78,7 +76,7 @@ unsigned int getSize(SLinkedList *list);
  * DEF: returns a pointer to the data at a particular index
  * PARAM1: SLinkedList *list - single linkedlist structure
  * PARAM2: int index - index of data in list
- * RETURN: returns void
+ * RETURN: returns a pointer to data;
 */
 void *get(SLinkedList *list, int index);
 
