@@ -74,6 +74,16 @@ void *get(SLinkedList *list, int index){
     return NULL;
 }
 
+void removeFront(SLinkedList *list){
+
+    if(list->head != NULL){
+
+        Node *nextNode = list->head->next;
+        freeNode((void **)&list->head);
+        list->head = nextNode;
+    }
+}
+
 unsigned int getSize(SLinkedList *list){
 
     unsigned int len = 0;

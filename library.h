@@ -52,13 +52,6 @@ void clear(SLinkedList *list);
 Node *add(SLinkedList *list, const void *data);
 
 /*
- * DEF: removes data from back of the list
- * PARAM1: SLinkedList *list - single linkedlist structure
- * RETURN: returns void
-*/
-void removeBack(SLinkedList *list);
-
-/*
  * DEF: removes data from front of the list
  * PARAM1: SLinkedList *list - single linkedlist structure
  * RETURN: returns void
