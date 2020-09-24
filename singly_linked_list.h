@@ -27,7 +27,7 @@ typedef struct slinkedlist {
  * PARAM1: SLinkedList *list - single linkedlist structure to be initialize
  * RETURN: returns void
 */
-void init(SLinkedList *list);
+void initList(SLinkedList *list);
 
 /*
  * DEF: Frees a node allocated with malloc
@@ -41,7 +41,7 @@ void freeNode(void **node);
  * PARAM1: SLinkedList *list - single linkedlist structure to be cleared
  * RETURN: returns void
 */
-void clear(SLinkedList *list);
+void clearList(SLinkedList *list);
 
 /*
  * DEF: inserts data to the list
@@ -49,7 +49,7 @@ void clear(SLinkedList *list);
  * PARAM2: const void *type - data to be stored in list
  * RETURN: pointer to node otherwise NULL
 */
-Node *add(SLinkedList *list, const void *data);
+Node *addList(SLinkedList *list, const void *data);
 
 /*
  * DEF: removes data from front of the list

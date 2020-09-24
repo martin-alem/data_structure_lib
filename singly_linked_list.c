@@ -4,7 +4,7 @@
 #include "singly_linked_list.h"
 #include <stdlib.h>
 
-void init(SLinkedList *list){
+void initList(SLinkedList *list){
     list->head = NULL;
     list->tail = NULL;
 }
@@ -18,7 +18,7 @@ void freeNode(void **node){
     }
 }
 
-void clear(SLinkedList *list){
+void clearList(SLinkedList *list){
 
     Node *node = list->head;
     Node *nextNode;
@@ -32,7 +32,7 @@ void clear(SLinkedList *list){
     list->tail = NULL;
 }
 
-Node *add(SLinkedList *list, const void *data){
+Node *addList(SLinkedList *list, const void *data){
 
     Node *node = (Node *)malloc(sizeof(Node));
     if(node == NULL){
