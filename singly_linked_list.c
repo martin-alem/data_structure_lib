@@ -77,12 +77,19 @@ void removeFront(SLinkedList *list){
 
     if(list->head != NULL){
 
-        Node *nextNode = list->head->next;
         if(list->head == list->tail){
+            freeNode((void **)&list->head);
+            list->head = NULL;
             list->tail = NULL;
         }
-        freeNode((void **)&list->head);
-        list->head = nextNode;
+        else {
+            Node *nextNode = list->head->next;
+            if (list->head == list->tail) {
+                list->tail = NULL;
+            }
+            freeNode((void **) &list->head);
+            list->head = nextNode;
+        }
     }
 }
 
