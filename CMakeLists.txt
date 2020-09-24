@@ -3,4 +3,4 @@ project(datastructure C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(datastructure main.c library.h library.c)
+add_executable(datastructure main.c singly_linked_list.h singly_linked_list.c)
